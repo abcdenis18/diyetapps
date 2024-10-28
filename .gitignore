@@ -10,16 +10,29 @@
 .svn/
 migrate_working_dir/
 
+# Credential and environment files
+.env
+.env.*
+*.env.local
+*.env.development
+*.env.production
+*.env.test
+*.env.example
+
+# Ignore any JSON/YAML files for secrets
+*.secret.json
+*.secret.yaml
+*.key.json
+*.key.yaml
+
 # IntelliJ related
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Visual Studio Code
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -41,3 +54,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Logs and Temporary Files
+*.log
+*.temp
+*.tmp
+*.swp

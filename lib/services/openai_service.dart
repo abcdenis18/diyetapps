@@ -5,7 +5,6 @@ import 'package:dio/dio.dart' as dio_service;
 import 'package:get/get.dart';
 
 class OpenAIService extends GetxService {
-  final _apiKey = 'YOUR_OPENAI_API_KEY';
   final String _url = "https://api.openai.com/v1/food-detection";
 
   Future<OpenAIService> init() async {
@@ -14,8 +13,6 @@ class OpenAIService extends GetxService {
 
   Future<Map<String, dynamic>> analyzeImage({required File imageFile}) async {
     final dio = dio_service.Dio();
-
-    dio.options.headers['Authorization'] = 'Bearer $_apiKey';
 
     dio_service.FormData formData = dio_service.FormData.fromMap({
       'file': await dio_service.MultipartFile.fromFile(imageFile.path),
